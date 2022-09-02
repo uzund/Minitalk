@@ -6,12 +6,12 @@
 #    By: duzun <davut@uzun.ist>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/02 18:21:42 by duzun             #+#    #+#              #
-#    Updated: 2022/09/03 00:04:11 by duzun            ###   ########.fr        #
+#    Updated: 2022/09/03 00:27:09 by duzun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	minitalk.a
-
+NAME			=	server
+NAME2			=	client
 CFLAG			=	-Weror -Wall -Wextra -I.
 
 CC				=	gcc
@@ -24,17 +24,16 @@ SRCS2			=	ft_print.c \
 					client.c
 
 					 
-OBJS			= $(SRCS:.c=.o)
-OBJS2			= $(SRCS2:.C=.0)
+OBJS			= $(SRCS:%.c=%.o)
+OBJS2			= $(SRCS2:%.c=%.o)
 
-$(NAME):		$(OBJS)
-				ar rc $(NAME) $(OBJS)
-				
-$(NAME2):		$(OBJS2)
-				ar rc $(NAME2) $(OBJS2) 
-			
 all:			$(NAME) $(NAME2)
 
+$(NAME):		$(OBJS)
+				$(CC) $(CFLAG) $(OBJS) -o $(NAME)
+				
+$(NAME2):		$(OBJS2)
+				$(CC) $(CFLAG) $(OBJS2) -o $(NAME2)
 clean:
 				$(RM) $(OBJS)
 				$(RM) $(OBJS2)
@@ -43,6 +42,6 @@ fclean:			clean
 				$(RM) $(NAME)
 				$(RM) $(NAME2)
 
-re:				fclean $(NAME) $(NAME2)
+re:				fclean all
 
 .PHONY:			all clean fclean re

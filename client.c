@@ -6,11 +6,11 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 18:05:53 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/03 00:04:27 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/03 00:19:44 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitak.h"
+#include "minitalk.h"
 
 int	*encoder(char c)
 {
@@ -41,17 +41,21 @@ void	sender(int *train, pid_t pid)
 	while (i < 8)
 	{
 		if (train[i] == 1)
+		{
 			if (kill(pid, SIGUSR1) == -1)
 			{
 				write(1, "Posts did not reach the server.\n", 33);
 				exit(EXIT_FAILURE);
 			}
+		}
 		else if (train[i] == 0)
+		{
 			if (kill(pid, SIGUSR2) == -1)
 			{
 				write(1, "Posts did not reach the server.\n", 33);
 				exit(EXIT_FAILURE);
 			}
+		}
 		i++;
 		usleep(101);
 	}
