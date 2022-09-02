@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 18:28:40 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/02 18:35:59 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/02 18:44:35 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define MINITALK_H
 
 # include <unistd.h>
+# include <stdio.h>
+# include <signal.h>
 
 
 #endif
