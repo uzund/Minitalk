@@ -6,21 +6,11 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 18:05:53 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/02 23:31:27 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/03 00:04:27 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "minitak.h"
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-void	ft_putstr_fd(char *s, int fd)
-{
-	while (*s)
-		write(fd, s++, 1);
-}
+#include "minitak.h"
 
 int	*encoder(char c)
 {
@@ -40,7 +30,7 @@ int	*encoder(char c)
 	}
 	while (i > -1)
 	train[i--] = 0; 
-	return (train);
+	return (train); 
 }
 
 void	sender(int *train, pid_t pid)
