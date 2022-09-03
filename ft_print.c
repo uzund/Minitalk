@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 23:43:13 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/03 00:17:30 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/03 01:40:58 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,27 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd(n % 10 + '0', fd);
 }
+
+int	ft_atoi(const char *str)
+{
+	int			i;
+	int			sign;
+	long int	num;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	while ((*(str + i) >= 0 && *(str + i) <= 13) || *(str + i) == ' ')
+		i++;
+	if (*(str + i) == '-')
+		sign = -1;
+	if (*(str + i) == '-' || *(str + i) == '+')
+		i = i + 1;
+	while (*(str + i) >= '0' && *(str + i) <= '9')
+	{
+		num = (*(str + i) - '0') + (num * 10);
+		i++;
+	}
+	return (num * sign);
+}
+
