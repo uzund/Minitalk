@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 18:05:53 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/03 04:07:17 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/03 04:11:56 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	sender(int pid, char i)
 int	main(int argc, char **argv)
 {
 	pid_t	pid;
-	int		*train;
 	int		i;
 
 	i = 0;
