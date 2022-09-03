@@ -6,13 +6,13 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 18:05:53 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/03 04:11:56 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/03 04:16:11 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	sender(int pid, char i)
+void	ft_sender(int pid, char i)
 {	
 	int	bit;
 
@@ -43,7 +43,7 @@ Please enter transaction ID and message.\033[0m\n", 1);
 	pid = ft_atoi(argv[1]);
 	while (argv[2][i])
 	{
-		sender(pid, argv[2][i]);
+		ft_sender(pid, argv[2][i]);
 		i++;
 	}
 	return (0);

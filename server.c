@@ -6,13 +6,13 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 18:05:40 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/03 03:56:40 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/03 04:17:22 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	handler(int signal)
+void	ft_handler(int signal)
 {
 	static int	bit;
 	static int	i;
@@ -39,8 +39,8 @@ int	main(void)
 	ft_putstr_fd("\033[32m]\033[37;40;0m\n", 1);
 	while (1)
 	{
-		signal(SIGUSR1, handler);
-		signal(SIGUSR2, handler);
+		signal(SIGUSR1, ft_handler);
+		signal(SIGUSR2, ft_handler);
 		pause();
 	}
 }
