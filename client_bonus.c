@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 04:25:01 by duzun             #+#    #+#             */
-/*   Updated: 2022/09/03 04:27:50 by duzun            ###   ########.fr       */
+/*   Updated: 2022/09/08 00:21:11 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_sender(int pid, char i)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(123);
+		usleep(79);
 		bit++;
 	}
 }
@@ -41,6 +41,12 @@ Please enter transaction ID and message.\033[0m\n", 1);
 		exit(EXIT_FAILURE);
 	}
 	pid = ft_atoi(argv[1]);
+	if (pid == -1)
+	{
+		ft_putstr_fd("\033[31mHOOP handsome what are you doing. \
+This is our neighborhood...\n", 2);
+		return (2);
+	}
 	while (argv[2][i])
 	{
 		ft_sender(pid, argv[2][i]);
